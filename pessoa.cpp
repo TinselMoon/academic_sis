@@ -12,6 +12,10 @@ Pessoa::~Pessoa(){
 
 }
 
+void Pessoa::uni_estuda(Universidade* pUniEstuda){
+    pUni = pUniEstuda;
+}
+
 void Pessoa::inicializa(int diaAT, int mesAT, int anoAT, const char* nome){
     diaP = diaAT;
     mesP = mesAT;

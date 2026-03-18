@@ -1,5 +1,4 @@
-#pragma once
-
+#include "stdafx.h"
 class Pessoa{
 private:
     int diaP;
@@ -7,10 +6,12 @@ private:
     int anoP;
     int idadeP;
     char nomeP[30];
+    Universidade* pUni;
 public:
     Pessoa(int dia, int mes, int ano, const char* nome = "Anonimo");
     Pessoa();
     ~Pessoa();
+    void uni_estuda(Universidade* pUniEstuda);
     void inicializa(int diaAT, int mesAT, int anoAT, const char* nome = "");
     void calc_idade(int diaAT, int mesAT, int anoAT);
     int inform_idade();

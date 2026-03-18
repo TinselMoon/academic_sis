@@ -4,6 +4,7 @@ class Principal{
 private:
     Pessoa Vitor;
     Pessoa Amanda;
+    Universidade UTFPR;
 public:
     Principal();
     ~Principal();

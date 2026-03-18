@@ -2,10 +2,12 @@
 
 Principal::Principal():
 Vitor(),
-Amanda()
+Amanda(),
+UTFPR()
 {
     Vitor.inicializa(27,2,2005,"Vitor Cruz");
     Amanda.inicializa(28,2,2000,"Amanda Sornas");
+    UTFPR.set_nome("UTFPR");
 }
 
 Principal::~Principal(){
