@@ -17,6 +17,8 @@ Principal::~Principal(){
 void Principal::executar(){
     Vitor.calc_idade(10,3,2026);
     Amanda.calc_idade(10,3,2026);
+    Vitor.uni_estuda(&UTFPR);
     cout << Vitor.inform_nome() << " tem " << Vitor.inform_idade() << " anos" << endl;
     cout << Amanda.inform_nome() << " tem " << Amanda.inform_idade() << " anos" << endl;
+    cout << Vitor.inform_nome() << " estuda na faculdade: " << Vitor.inform_uni() << endl;
 }

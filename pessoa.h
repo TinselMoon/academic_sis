@@ -16,4 +16,5 @@ public:
     void calc_idade(int diaAT, int mesAT, int anoAT);
     int inform_idade();
     char* inform_nome();
+    char* inform_uni();
 };

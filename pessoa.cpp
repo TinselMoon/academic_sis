@@ -43,3 +43,7 @@ int Pessoa::inform_idade(){
 char* Pessoa::inform_nome(){
     return nomeP;
 }
+
+char* Pessoa::inform_uni(){
+    return pUni->inform_uni();
+}
