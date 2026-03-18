@@ -2,12 +2,19 @@
 #include "stdafx.h"
 
 Pessoa::Pessoa(int dia, int mes, int ano, const char* nome){
-    diaP = dia;
-    mesP = mes;
-    anoP = ano;
+    inicializa(dia, mes, ano, nome);
+}
+
+Pessoa::Pessoa(){
+    inicializa(0, 0, 0);
+}
+
+void Pessoa::inicializa(int diaAT, int mesAT, int anoAT, const char* nome){
+    diaP = diaAT;
+    mesP = mesAT;
+    anoP = anoAT;
     idadeP = -1;
     strcpy(nomeP, nome);
-
 }
 
 void Pessoa::calc_idade(int diaAT, int mesAT, int anoAT){

@@ -1,2 +1,2 @@
 all:
-	g++ -o sis_acad main.cpp pessoa.cpp stdafx.cpp
+	g++ -o sis_acad main.cpp pessoa.cpp principal.cpp stdafx.cpp

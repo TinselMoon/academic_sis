@@ -11,3 +11,5 @@
 using std::cout;
 using std::endl;
 using std::cin;
+#include "pessoa.h"
+#include "principal.h"
