@@ -1,4 +1,3 @@
-#include "pessoa.h"
 #include "stdafx.h"
 
 Pessoa::Pessoa(int dia, int mes, int ano, const char* nome){
@@ -7,6 +6,10 @@ Pessoa::Pessoa(int dia, int mes, int ano, const char* nome){
 
 Pessoa::Pessoa(){
     inicializa(0, 0, 0);
+}
+
+Pessoa::~Pessoa(){
+
 }
 
 void Pessoa::inicializa(int diaAT, int mesAT, int anoAT, const char* nome){

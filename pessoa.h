@@ -8,8 +8,9 @@ private:
     int idadeP;
     char nomeP[30];
 public:
-    Pessoa(int dia = 0, int mes = 0, int ano = 0, const char* nome = "Anonimo");
+    Pessoa(int dia, int mes, int ano, const char* nome = "Anonimo");
     Pessoa();
+    ~Pessoa();
     void inicializa(int diaAT, int mesAT, int anoAT, const char* nome = "");
     void calc_idade(int diaAT, int mesAT, int anoAT);
     int inform_idade();

@@ -6,5 +6,6 @@ private:
     Pessoa Amanda;
 public:
     Principal();
+    ~Principal();
     void executar();
 };
