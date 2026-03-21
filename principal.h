@@ -1,4 +1,6 @@
-#include "stdafx.h"
+#pragma once
+#include "pessoa.h"
+#include "universidade.h"
 
 class Principal{
 private:

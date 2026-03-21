@@ -1,4 +1,5 @@
-#include "stdafx.h"
+#pragma once
+#include "universidade.h"
 class Pessoa{
 private:
     int diaP;

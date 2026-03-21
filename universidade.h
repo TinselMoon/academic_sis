@@ -1,3 +1,4 @@
+#pragma once
 class Universidade{
 private:
     char nomeUni[30];
