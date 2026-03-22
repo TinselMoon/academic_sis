@@ -1,5 +1,5 @@
-#include "dept.h"
 #include "stdafx.h"
+#include "dept.h"
 
 Dept::Dept(const char* nomeDept){
     inicializa(nomeDept);

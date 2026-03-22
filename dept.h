@@ -8,4 +8,4 @@ public:
     ~Dept();
     void inicializa(const char* nomeDpt);
     const char* getNome();
-}
+};
