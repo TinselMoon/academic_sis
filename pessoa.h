@@ -8,6 +8,7 @@ private:
     int idadeP;
     char nomeP[30];
     Universidade* pUni;
+    Dept* pDept;
 public:
     Pessoa(int dia, int mes, int ano, const char* nome = "Anonimo");
     Pessoa();
@@ -18,4 +19,6 @@ public:
     int inform_idade();
     char* inform_nome();
     char* inform_uni();
+    void set_dept(Dept* pToDept);
+    const char* inform_dept();
 };

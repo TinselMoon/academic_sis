@@ -1,0 +1,18 @@
+#include "dept.h"
+#include "stdafx.h"
+
+Dept::Dept(const char* nomeDept){
+    inicializa(nomeDept);
+}
+
+Dept::~Dept(){
+
+}
+
+void Dept::inicializa(const char* nomeDpt){
+    strcpy(nome, nomeDpt);
+}
+
+const char* Dept::getNome(){
+    return nome;
+}

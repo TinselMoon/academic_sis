@@ -1,4 +1,7 @@
 #include "stdafx.h"
+#include "pessoa.h"
+#include "universidade.h"
+#include "dept.h"
 
 Pessoa::Pessoa(int dia, int mes, int ano, const char* nome){
     inicializa(dia, mes, ano, nome);
@@ -23,6 +26,7 @@ void Pessoa::inicializa(int diaAT, int mesAT, int anoAT, const char* nome){
     idadeP = -1;
     strcpy(nomeP, nome);
     pUni = NULL;
+    pDept = NULL;
 }
 
 void Pessoa::calc_idade(int diaAT, int mesAT, int anoAT){
@@ -48,3 +52,12 @@ char* Pessoa::inform_nome(){
 char* Pessoa::inform_uni(){
     return pUni->inform_uni();
 }
+
+void Pessoa::set_dept(Dept* pToDept){
+    pDept = pToDept;
+}
+
+const char* Pessoa::inform_dept(){
+    return pDept->getNome();
+}
+

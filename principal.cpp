@@ -2,12 +2,15 @@
 
 Principal::Principal():
 Vitor(),
-Amanda(),
-UTFPR()
+UTFPR(),
+Dainf()
 {
     Vitor.inicializa(27,2,2005,"Vitor Cruz");
-    Amanda.inicializa(28,2,2000,"Amanda Sornas");
     UTFPR.set_nome("UTFPR");
+    Dainf.inicializa("DAINF");
+    UTFPR.set_dpto(&Dainf);
+    Vitor.set_dept(&Dainf);
+
 }
 
 Principal::~Principal(){
@@ -16,9 +19,7 @@ Principal::~Principal(){
 
 void Principal::executar(){
     Vitor.calc_idade(10,3,2026);
-    Amanda.calc_idade(10,3,2026);
     Vitor.uni_estuda(&UTFPR);
     cout << Vitor.inform_nome() << " tem " << Vitor.inform_idade() << " anos" << endl;
-    cout << Amanda.inform_nome() << " tem " << Amanda.inform_idade() << " anos" << endl;
-    cout << Vitor.inform_nome() << " estuda na faculdade: " << Vitor.inform_uni() << endl;
+    cout << Vitor.inform_nome() << " estuda na faculdade: " << Vitor.inform_uni() << " no departamento: " << Vitor.inform_dept() << endl;
 }
