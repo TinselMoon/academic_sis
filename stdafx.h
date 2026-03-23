@@ -13,4 +13,3 @@ using std::endl;
 using std::cin;
 #include "universidade.h"
 #include "pessoa.h"
-#include "principal.h"

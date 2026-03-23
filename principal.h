@@ -6,6 +6,7 @@ private:
     Pessoa Vitor;
     Universidade UTFPR;
     Dept Dainf;
+    Dept Daeln;
 public:
     Principal();
     ~Principal();

@@ -3,6 +3,7 @@
 
 Universidade::Universidade(const char* nome){
     set_nome(nome);
+    ctdDepts = 0;
 }
 
 Universidade::~Universidade(){}
@@ -16,5 +17,12 @@ char* Universidade::inform_uni(){
 }
 
 void Universidade::set_dpto(Dept* pDptoFiliado){
-    pDpto = pDptoFiliado;
+    departamentos.push_back(pDptoFiliado);
+    ctdDepts++;
+}
+
+void Universidade::imprimeDepts(){
+    for(int i = 0; i < ctdDepts; i++){
+        cout << departamentos[i]->getNome() << endl;
+    }
 }
