@@ -1,8 +1,8 @@
-#include "professor.h"
 #include "stdafx.h"
+#include "professor.h"
 
 Professor::Professor(int dia, int mes, int ano, const char* nome):
-Pessoa(int dia, int mes, int ano, const char* nome){
+Pessoa(dia, mes, ano, nome){
     pUni = NULL;
     pDept = NULL;
 }
