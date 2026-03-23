@@ -1,4 +1,5 @@
 #include "professor.h"
+#include "stdafx.h"
 
 Professor::Professor(int dia, int mes, int ano, const char* nome):
 Pessoa(int dia, int mes, int ano, const char* nome){
@@ -10,6 +11,9 @@ Professor::Professor():
 Pessoa(){
     pUni = NULL;
     pDept = NULL;
+}
+
+Professor::~Professor() {
 }
 
 char* Professor::inform_uni(){
