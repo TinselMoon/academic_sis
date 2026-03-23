@@ -14,7 +14,6 @@ Dainf()
 }
 
 Principal::~Principal(){
-
 }
 
 void Principal::executar(){

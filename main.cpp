@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "principal.h"
 
 int main(){
     Principal programa;
