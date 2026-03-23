@@ -1,9 +1,9 @@
 #pragma once
-#include "pessoa.h"
+#include "professor.h"
 
 class Principal{
 private:
-    Pessoa Vitor;
+    Professor Vitor;
     Universidade UTFPR;
     Dept Dainf;
     Dept Daeln;
