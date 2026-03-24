@@ -5,9 +5,12 @@ Principal::Principal():
 Vitor(),
 UTFPR(),
 Dainf(),
-Daeln()
+Daeln(),
+Joaquim()
 {
     Vitor.inicializa(27,2,2005,"Vitor Cruz");
+    Joaquim.inicializa(16,7,2006,"Joaquim Saito");
+    Joaquim.setRa(2789654);
     UTFPR.set_nome("UTFPR");
     Dainf.inicializa("DAINF");
     Daeln.inicializa("DAELN");
@@ -26,4 +29,5 @@ void Principal::executar(){
     cout << Vitor.inform_nome() << " tem " << Vitor.inform_idade() << " anos" << endl;
     cout << Vitor.inform_nome() << " estuda na faculdade: " << Vitor.inform_uni() << " no departamento: " << Vitor.inform_dept() << endl;
     UTFPR.imprimeDepts();
+    cout << Joaquim.inform_nome() << " de RA: " << Joaquim.getRa() << endl;
 }
