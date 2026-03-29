@@ -9,6 +9,7 @@ private:
     Universidade UTFPR;
     Dept Dainf;
     Dept Daeln;
+    Disciplina TecProg, Ed2;
 public:
     Principal();
     ~Principal();

@@ -1,15 +1,17 @@
 #include "disciplina.h"
 #include <string.h>
 
-Disciplina::Disciplina(const char* nomeD){
+Disciplina::Disciplina(const char* nomeD, int max){
     setName(nomeD);
+    max_alunos = max;
+    num_alunos = 0;
     pDept = NULL;
-    pToNext = NULL;
+    pToNext = pToPrev = NULL;
 }
 
 Disciplina::~Disciplina(){
     pDept = NULL;
-    pToNext = NULL;
+    pToNext = pToPrev = NULL;
 }
 void Disciplina::setName(const char* nomeD){
     strcpy(nome, nomeD);
@@ -23,3 +25,38 @@ const char* Disciplina::getName(){
     return nome;
 }
 
+void Disciplina::incldAluno(Aluno *pToAluno){
+    if(max_alunos == num_alunos){
+        cout << "Turma cheia" << endl;
+        return;
+    }
+    if(pLast == NULL){
+        pFirst = pToDis;
+        pLast = pToDis;
+    }
+    else{
+        pToDis->pToNext = pFirst;
+        pFirst->pToPrev = pToDis;
+        pFirst = pToDis;
+    }
+    num_alunos++;
+}
+void Disciplina::listAlunos(){
+    Aluno* t = pFirst;
+    cout << "Disciplinas: ";
+    while(t != NULL){
+        cout << t->inform_nome() << " / ";
+        t = t->pToNext;
+    }
+    cout << endl;
+}
+
+void Disciplina::listAlunosRev(){
+    Aluno* t = pLast;
+    cout << "Disciplinas: ";
+    while(t != NULL){
+        cout << t->inform_nome() << " / ";
+        t = t->pToPrev;
+    }
+    cout << endl;
+}

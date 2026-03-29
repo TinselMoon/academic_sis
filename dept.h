@@ -17,4 +17,5 @@ public:
     void set_univ(Universidade *pToUniv);
     void incldDis(Disciplina* pToDis);
     void listDis();
+    void listDisRev();
 };

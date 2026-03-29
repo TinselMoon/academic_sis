@@ -6,7 +6,9 @@ Vitor(),
 UTFPR(),
 Dainf(),
 Daeln(),
-Joaquim()
+Joaquim(),
+TecProg("Tecnicas de Programacao"),
+Ed2("Estruturas de dados 2")
 {
     Vitor.inicializa(27,2,2005,"Vitor Cruz");
     Joaquim.inicializa(16,7,2006,"Joaquim Saito");
@@ -18,6 +20,9 @@ Joaquim()
     UTFPR.set_dpto(&Daeln);
     Vitor.set_dept(&Dainf);
     Dainf.set_univ(&UTFPR);
+    Dainf.incldDis(&TecProg);
+    Dainf.incldDis(&Ed2);
+    TecProg.incldAluno(&Joaquim);
 }
 
 Principal::~Principal(){
@@ -30,4 +35,7 @@ void Principal::executar(){
     cout << Vitor.inform_nome() << " estuda na faculdade: " << Vitor.inform_uni() << " no departamento: " << Vitor.inform_dept() << endl;
     UTFPR.imprimeDepts();
     cout << Joaquim.inform_nome() << " de RA: " << Joaquim.getRa() << endl;
+    Dainf.listDis();
+    Dainf.listDisRev();
+    TecProg.listAlunos();
 }

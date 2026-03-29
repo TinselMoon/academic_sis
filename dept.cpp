@@ -25,12 +25,14 @@ void Dept::set_univ(Universidade *pToUniv){
 }
 
 void Dept::incldDis(Disciplina* pToDis){
+    pToDis->setDept(this);
     if(pLast == NULL){
         pFirst = pToDis;
         pLast = pToDis;
         return;
     }
     pToDis->pToNext = pFirst;
+    pFirst->pToPrev = pToDis;
     pFirst = pToDis;
 }
 
@@ -38,10 +40,18 @@ void Dept::listDis(){
     Disciplina* t = pFirst;
     cout << "Disciplinas: ";
     while(t != NULL){
-        cout << t->getName() << " ";
+        cout << t->getName() << " / ";
         t = t->pToNext;
     }
     cout << endl;
 }
 
-
+void Dept::listDisRev(){
+    Disciplina* t = pLast;
+    cout << "Disciplinas: ";
+    while(t != NULL){
+        cout << t->getName() << " / ";
+        t = t->pToPrev;
+    }
+    cout << endl;
+}
