@@ -1,5 +1,5 @@
 #pragma once
-#include "universidade.h"
+class Universidade;
 class Pessoa{
 protected:
     int diaP;

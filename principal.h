@@ -6,6 +6,7 @@ class Principal{
 private:
     Professor Vitor;
     Aluno Joaquim;
+    Aluno Gaybriel;
     Universidade UTFPR;
     Dept Dainf;
     Dept Daeln;

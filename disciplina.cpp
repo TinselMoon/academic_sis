@@ -1,4 +1,5 @@
 #include "disciplina.h"
+#include "stdafx.h"
 #include <string.h>
 
 Disciplina::Disciplina(const char* nomeD, int max){
@@ -7,11 +8,13 @@ Disciplina::Disciplina(const char* nomeD, int max){
     num_alunos = 0;
     pDept = NULL;
     pToNext = pToPrev = NULL;
+    pFirst = pLast = NULL;
 }
 
 Disciplina::~Disciplina(){
     pDept = NULL;
     pToNext = pToPrev = NULL;
+    pFirst = pLast = NULL;
 }
 void Disciplina::setName(const char* nomeD){
     strcpy(nome, nomeD);
@@ -31,19 +34,19 @@ void Disciplina::incldAluno(Aluno *pToAluno){
         return;
     }
     if(pLast == NULL){
-        pFirst = pToDis;
-        pLast = pToDis;
+        pFirst = pToAluno;
+        pLast = pToAluno;
     }
     else{
-        pToDis->pToNext = pFirst;
-        pFirst->pToPrev = pToDis;
-        pFirst = pToDis;
+        pToAluno->pToNext = pFirst;
+        pFirst->pToPrev = pToAluno;
+        pFirst = pToAluno;
     }
     num_alunos++;
 }
 void Disciplina::listAlunos(){
     Aluno* t = pFirst;
-    cout << "Disciplinas: ";
+    cout << "Alunos da disciplina " << nome << ": ";
     while(t != NULL){
         cout << t->inform_nome() << " / ";
         t = t->pToNext;
@@ -53,7 +56,7 @@ void Disciplina::listAlunos(){
 
 void Disciplina::listAlunosRev(){
     Aluno* t = pLast;
-    cout << "Disciplinas: ";
+    cout << "Alunos da disciplina " << nome << ": ";
     while(t != NULL){
         cout << t->inform_nome() << " / ";
         t = t->pToPrev;

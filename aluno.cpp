@@ -1,4 +1,5 @@
 #include "aluno.h"
+#include "stdafx.h"
 
 Aluno::Aluno(int dia, int mes, int ano, const char* nome):
 Pessoa(dia, mes, ano, nome){
