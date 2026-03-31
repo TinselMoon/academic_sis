@@ -56,7 +56,7 @@ void Disciplina::listAlunos(){
     ElAluno* t;
     cout << "Alunos da disciplina " << nome << ": ";
     for(t = FirstAluno; t != NULL; t = t->nextElAluno){
-        cout << t->pAluno->inform_nome() << " / ";
+        cout << t->getAluno()->inform_nome() << " / ";
     }
     cout << endl;
 }
@@ -65,7 +65,7 @@ void Disciplina::listAlunosRev(){
     ElAluno* t;
     cout << "Alunos da disciplina " << nome << ": ";
     for(t = LastAluno; t != NULL; t = t->prevElAluno){
-        cout << t->pAluno->inform_nome() << " / ";
+        cout << t->getAluno()->inform_nome() << " / ";
     }
     cout << endl;
 }

@@ -14,3 +14,11 @@ ElAluno::~ElAluno(){
 void ElAluno::setAluno(Aluno *pa){
     pAluno = pa;
 }
+
+Aluno* ElAluno::getAluno(){
+    return pAluno;
+}
+
+const char* ElAluno::getNome(){
+    return pAluno->inform_nome();
+}
