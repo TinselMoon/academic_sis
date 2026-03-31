@@ -5,7 +5,7 @@ ListaAlunos::ListaAlunos(int max){
     First = Last = NULL;
     max_alunos = max;
     cont_alunos = 0;
-    strcpy(nome, "")
+    strcpy(nome, "");
 }
 
 ListaAlunos::~ListaAlunos(){
