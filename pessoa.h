@@ -2,6 +2,7 @@
 class Universidade;
 class Pessoa{
 protected:
+    int id;
     int diaP;
     int mesP;
     int anoP;

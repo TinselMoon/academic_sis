@@ -1,19 +1,19 @@
 #pragma once
-#include "elaluno.h"
+#include "ListaAlunos.h"
 
 class Dept;
 
 class Disciplina{
 private:
+    int id;
     char nome[30];
-    int max_alunos;
-    int num_alunos;
     Dept* pDept;
+
+    ListaAlunos ObjLAlunos;
 
 public:
     Disciplina(const char* nomeD = "Unnamed", int max = 45);
     ~Disciplina();
-    ElAluno *FirstAluno, *LastAluno;
     void setName(const char* nomeD);
     void setDept(Dept* pToDept);
     const char* getName();
