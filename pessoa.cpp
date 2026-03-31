@@ -13,6 +13,9 @@ Pessoa::~Pessoa(){
 
 }
 
+void Pessoa::setNome(const char* nomeN){
+    strcpy(nomeP, nomeN);
+}
 
 void Pessoa::inicializa(int diaAT, int mesAT, int anoAT, const char* nome){
     diaP = diaAT;

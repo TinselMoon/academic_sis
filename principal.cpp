@@ -45,4 +45,6 @@ void Principal::executar(){
     TecProg.listAlunos();
     TecProg.listAlunosRev();
     Ed2.listAlunos();
+    Joaquim.setNome("JAPONES SAFADO");
+    TecProg.listAlunos();
 }

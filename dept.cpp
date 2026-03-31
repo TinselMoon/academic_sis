@@ -4,12 +4,20 @@
 Dept::Dept(const char* nomeDept){
     inicializa(nomeDept);
     pUniv = NULL;
-    pFirst = pLast = NULL;
+    First = Last = NULL;
 }
 
 Dept::~Dept(){
     pUniv = NULL;
-    pFirst = pLast = NULL;
+    //First = Last = NULL; ARRUMAR FREE
+    Last = NULL;
+    ElDisciplina *aux = NULL;
+    while(First != NULL){
+        aux = First;
+        First = First->nextDis;
+        delete aux;
+    }
+    aux = NULL;
 }
 
 void Dept::inicializa(const char* nomeDpt){
@@ -26,32 +34,34 @@ void Dept::set_univ(Universidade *pToUniv){
 
 void Dept::incldDis(Disciplina* pToDis){
     pToDis->setDept(this);
-    if(pLast == NULL){
-        pFirst = pToDis;
-        pLast = pToDis;
+    ElDisciplina *aux = new ElDisciplina;
+    aux->pDis = pToDis;
+    if(Last == NULL){
+        First = aux;
+        Last = aux;
         return;
     }
-    pToDis->pToNext = pFirst;
-    pFirst->pToPrev = pToDis;
-    pFirst = pToDis;
+    aux->nextDis = First;
+    First->prevDis = aux;
+    First = aux;
 }
 
 void Dept::listDis(){
-    Disciplina* t = pFirst;
+    ElDisciplina* t = First;
     cout << "Disciplinas: ";
     while(t != NULL){
-        cout << t->getName() << " / ";
-        t = t->pToNext;
+        cout << t->pDis->getName() << " / ";
+        t = t->nextDis;
     }
     cout << endl;
 }
 
 void Dept::listDisRev(){
-    Disciplina* t = pLast;
+    ElDisciplina* t = Last;
     cout << "Disciplinas: ";
     while(t != NULL){
-        cout << t->getName() << " / ";
-        t = t->pToPrev;
+        cout << t->pDis->getName() << " / ";
+        t = t->prevDis;
     }
     cout << endl;
 }

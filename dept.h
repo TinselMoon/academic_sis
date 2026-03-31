@@ -1,5 +1,5 @@
 #pragma once
-#include "disciplina.h"
+#include "eldisciplina.h"
 
 class Universidade;
 
@@ -7,11 +7,11 @@ class Dept{
 private:
     char nome[30];
     Universidade* pUniv;
-    Disciplina* pFirst;
-    Disciplina* pLast;
 public:
     Dept(const char* nomeDept = "");
     ~Dept();
+    ElDisciplina* First;
+    ElDisciplina* Last;
     void inicializa(const char* nomeDpt);
     const char* getNome();
     void set_univ(Universidade *pToUniv);

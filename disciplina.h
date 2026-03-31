@@ -1,5 +1,5 @@
 #pragma once
-#include "aluno.h"
+#include "elaluno.h"
 
 class Dept;
 
@@ -9,11 +9,11 @@ private:
     int max_alunos;
     int num_alunos;
     Dept* pDept;
+
 public:
     Disciplina(const char* nomeD = "Unnamed", int max = 45);
     ~Disciplina();
-    Disciplina *pToNext, *pToPrev;
-    Aluno *pFirst, *pLast;
+    ElAluno *FirstAluno, *LastAluno;
     void setName(const char* nomeD);
     void setDept(Dept* pToDept);
     const char* getName();

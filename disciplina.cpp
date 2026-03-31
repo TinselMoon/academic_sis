@@ -7,14 +7,19 @@ Disciplina::Disciplina(const char* nomeD, int max){
     max_alunos = max;
     num_alunos = 0;
     pDept = NULL;
-    pToNext = pToPrev = NULL;
-    pFirst = pLast = NULL;
+    FirstAluno = LastAluno = NULL;
 }
 
 Disciplina::~Disciplina(){
     pDept = NULL;
-    pToNext = pToPrev = NULL;
-    pFirst = pLast = NULL;
+    LastAluno = NULL;
+    ElAluno *aux = NULL;
+    while(FirstAluno != NULL){
+        aux = FirstAluno;
+        FirstAluno = FirstAluno->nextElAluno;
+        delete aux;
+    }
+    aux = NULL;
 }
 void Disciplina::setName(const char* nomeD){
     strcpy(nome, nomeD);
@@ -33,33 +38,34 @@ void Disciplina::incldAluno(Aluno *pToAluno){
         cout << "Turma cheia" << endl;
         return;
     }
-    if(pLast == NULL){
-        pFirst = pToAluno;
-        pLast = pToAluno;
+    ElAluno *p = NULL;
+    p = new ElAluno();
+    p->setAluno(pToAluno);
+    if(LastAluno == NULL){
+        FirstAluno = p;
+        LastAluno = p;
     }
     else{
-        pToAluno->pToNext = pFirst;
-        pFirst->pToPrev = pToAluno;
-        pFirst = pToAluno;
+        p->nextElAluno = FirstAluno;
+        FirstAluno->prevElAluno = p;
+        FirstAluno = p;
     }
     num_alunos++;
 }
 void Disciplina::listAlunos(){
-    Aluno* t = pFirst;
+    ElAluno* t;
     cout << "Alunos da disciplina " << nome << ": ";
-    while(t != NULL){
-        cout << t->inform_nome() << " / ";
-        t = t->pToNext;
+    for(t = FirstAluno; t != NULL; t = t->nextElAluno){
+        cout << t->pAluno->inform_nome() << " / ";
     }
     cout << endl;
 }
 
 void Disciplina::listAlunosRev(){
-    Aluno* t = pLast;
+    ElAluno* t;
     cout << "Alunos da disciplina " << nome << ": ";
-    while(t != NULL){
-        cout << t->inform_nome() << " / ";
-        t = t->pToPrev;
+    for(t = LastAluno; t != NULL; t = t->prevElAluno){
+        cout << t->pAluno->inform_nome() << " / ";
     }
     cout << endl;
 }
