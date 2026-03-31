@@ -12,4 +12,3 @@ using std::cout;
 using std::endl;
 using std::cin;
 #include "universidade.h"
-#include "pessoa.h"

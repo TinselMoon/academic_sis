@@ -1,7 +1,7 @@
 #pragma once
 
-#include "elaluno.h"
-#include "stdafx.h"
+
+class ElAluno;
 
 class ListaAlunos{
 private:
@@ -12,7 +12,7 @@ public:
     ListaAlunos(int max = 45);
     ~ListaAlunos();
 
-    void incldAluno(Aluno *pToAluno = NULL);
+    void incldAluno(Aluno *pToAluno);
     void listeAlunos();
     void listeAlunosRev();
 };
