@@ -1,6 +1,5 @@
 #pragma once
 #include "dept.h"
-#include "eluniversidade.h"
 #include <vector>
 using namespace std;
 
@@ -13,10 +12,6 @@ private:
 public:
     Universidade(const char* nome = "");
     ~Universidade();
-    ElUniversidade *First, *Last;
-    void incldUni(Universidade* pToUni);
-    void listUni();
-    void listUniRev();
     void set_nome(const char* nome);
     char* inform_uni();
     void set_dpto(Dept* pDptoFiliado);
