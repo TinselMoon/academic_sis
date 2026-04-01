@@ -19,10 +19,9 @@ Ed2("Estruturas de dados 2")
     UTFPR.set_nome("UTFPR");
     Dainf.inicializa("DAINF");
     Daeln.inicializa("DAELN");
-    UTFPR.set_dpto(&Dainf);
-    UTFPR.set_dpto(&Daeln);
+    UTFPR.incldDept(&Dainf);
+    UTFPR.incldDept(&Daeln);
     Vitor.set_dept(&Dainf);
-    Dainf.set_univ(&UTFPR);
     Dainf.incldDis(&TecProg);
     Dainf.incldDis(&Ed2);
     TecProg.incldAluno(&Joaquim);
@@ -38,7 +37,7 @@ void Principal::executar(){
     Vitor.uni_estuda(&UTFPR);
     cout << Vitor.inform_nome() << " tem " << Vitor.inform_idade() << " anos" << endl;
     cout << Vitor.inform_nome() << " estuda na faculdade: " << Vitor.inform_uni() << " no departamento: " << Vitor.inform_dept() << endl;
-    UTFPR.imprimeDepts();
+    UTFPR.listeDepts();
     cout << Joaquim.inform_nome() << " de RA: " << Joaquim.getRa() << endl;
     Dainf.listDis();
     Dainf.listDisRev();

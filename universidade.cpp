@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "universidade.h"
+#include "dept.h"
 
 Universidade::Universidade(const char* nome){
     set_nome(nome);
-    ctdDepts = 0;
 }
 
 Universidade::~Universidade(){
@@ -21,14 +21,17 @@ char* Universidade::inform_uni(){
     return nomeUni;
 }
 
-void Universidade::set_dpto(Dept* pDptoFiliado){
-    departamentos.push_back(pDptoFiliado);
-    ctdDepts++;
+void Universidade::incldDept(Dept *pToDept){
+    pToDept->set_univ(this);
+    ObjLDept.incldDept(pToDept);
 }
 
-void Universidade::imprimeDepts(){
-    for(int i = 0; i < ctdDepts; i++){
-        cout << departamentos[i]->getNome() << endl;
-    }
+void Universidade::listeDepts(){
+    cout << "Departamentos da Universidade " << nomeUni << ": " << endl;
+    ObjLDept.listeDepts();
 }
 
+void Universidade::listeDeptsRev(){
+    cout << "Departamentos da Universidade " << nomeUni << ": " << endl;
+    ObjLDept.listeDeptsRev();
+}
