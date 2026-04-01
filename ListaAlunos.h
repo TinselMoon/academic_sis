@@ -7,7 +7,6 @@ class ListaAlunos{
 private:
     ElAluno *First, *Last;
     int cont_alunos, max_alunos;
-    char nome[150];
 public:
     ListaAlunos(int max = 45);
     ~ListaAlunos();

@@ -1,23 +1,17 @@
 #include "stdafx.h"
 #include "dept.h"
+#include "disciplina.h"
+#include "ListaDisciplinas.h"
 
-Dept::Dept(const char* nomeDept){
+Dept::Dept(const char* nomeDept):
+ObjLDis()
+{
     inicializa(nomeDept);
     pUniv = NULL;
-    First = Last = NULL;
 }
 
 Dept::~Dept(){
     pUniv = NULL;
-    //First = Last = NULL; ARRUMAR FREE
-    Last = NULL;
-    ElDisciplina *aux = NULL;
-    while(First != NULL){
-        aux = First;
-        First = First->nextDis;
-        delete aux;
-    }
-    aux = NULL;
 }
 
 void Dept::inicializa(const char* nomeDpt){
@@ -34,34 +28,15 @@ void Dept::set_univ(Universidade *pToUniv){
 
 void Dept::incldDis(Disciplina* pToDis){
     pToDis->setDept(this);
-    ElDisciplina *aux = new ElDisciplina;
-    aux->pDis = pToDis;
-    if(Last == NULL){
-        First = aux;
-        Last = aux;
-        return;
-    }
-    aux->nextDis = First;
-    First->prevDis = aux;
-    First = aux;
+    //chamr func incldDis
+    ObjLDis.incldDis(pToDis);
 }
 
 void Dept::listDis(){
-    ElDisciplina* t = First;
-    cout << "Disciplinas: ";
-    while(t != NULL){
-        cout << t->pDis->getName() << " / ";
-        t = t->nextDis;
-    }
-    cout << endl;
+    //chamar func de listadis
+    ObjLDis.listeDis();
 }
 
 void Dept::listDisRev(){
-    ElDisciplina* t = Last;
-    cout << "Disciplinas: ";
-    while(t != NULL){
-        cout << t->pDis->getName() << " / ";
-        t = t->prevDis;
-    }
-    cout << endl;
+    ObjLDis.listeDisRev();
 }
