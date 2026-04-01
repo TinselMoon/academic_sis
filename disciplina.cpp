@@ -28,9 +28,11 @@ void Disciplina::incldAluno(Aluno *pToAluno){
     ObjLAlunos.incldAluno(pToAluno);
 }
 void Disciplina::listAlunos(){
+    cout << "Alunos da disciplina " << nome << ": ";
     ObjLAlunos.listeAlunos();
 }
 
 void Disciplina::listAlunosRev(){
+    cout << "Alunos da disciplina " << nome << ": ";
     ObjLAlunos.listeAlunosRev();
 }

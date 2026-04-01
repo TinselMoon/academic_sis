@@ -1,6 +1,6 @@
 #pragma once
 
-
+class Aluno;
 class ElAluno;
 
 class ListaAlunos{

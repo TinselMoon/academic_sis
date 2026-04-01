@@ -1,6 +1,9 @@
 #include "ListaAlunos.h"
 #include "stdafx.h"
 
+#include "elaluno.h"
+#include "aluno.h"
+
 ListaAlunos::ListaAlunos(int max){
     First = Last = NULL;
     max_alunos = max;
@@ -43,7 +46,6 @@ void ListaAlunos::incldAluno(Aluno *pToAluno){
 
 void ListaAlunos::listeAlunos(){
     ElAluno* t;
-    cout << "Alunos da disciplina " << nome << ": ";
     for(t = First; t != NULL; t = t->nextElAluno){
         cout << t->getAluno()->inform_nome() << " / ";
     }
@@ -52,7 +54,6 @@ void ListaAlunos::listeAlunos(){
 
 void ListaAlunos::listeAlunosRev(){
     ElAluno* t;
-    cout << "Alunos da disciplina " << nome << ": ";
     for(t = Last; t != NULL; t = t->prevElAluno){
         cout << t->getAluno()->inform_nome() << " / ";
     }

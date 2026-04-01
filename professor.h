@@ -1,6 +1,8 @@
 #pragma once
 #include "pessoa.h"
 
+class Dept;
+
 class Professor: public Pessoa{
 private:
     Universidade* pUni;

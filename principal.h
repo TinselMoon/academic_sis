@@ -2,6 +2,10 @@
 #include "professor.h"
 #include "aluno.h"
 
+#include "universidade.h"
+#include "dept.h"
+#include "disciplina.h"
+
 class Principal{
 private:
     Professor Vitor;
