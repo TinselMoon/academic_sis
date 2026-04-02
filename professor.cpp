@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "professor.h"
+#include "dept.h"
 
 Professor::Professor(int dia, int mes, int ano, const char* nome):
 Pessoa(dia, mes, ano, nome){

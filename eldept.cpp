@@ -12,3 +12,7 @@ ElDept::~ElDept(){
 void ElDept::setDept(Dept *pToDept){
     pDept = pToDept;
 }
+
+Dept* ElDept::getDept(){
+    return pDept;
+}

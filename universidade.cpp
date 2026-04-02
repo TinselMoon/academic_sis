@@ -27,11 +27,11 @@ void Universidade::incldDept(Dept *pToDept){
 }
 
 void Universidade::listeDepts(){
-    cout << "Departamentos da Universidade " << nomeUni << ": " << endl;
+    cout << "Departamentos da Universidade " << nomeUni << ": ";
     ObjLDept.listeDepts();
 }
 
 void Universidade::listeDeptsRev(){
-    cout << "Departamentos da Universidade " << nomeUni << ": " << endl;
+    cout << "Departamentos da Universidade " << nomeUni << ": ";
     ObjLDept.listeDeptsRev();
 }

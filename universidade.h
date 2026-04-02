@@ -15,6 +15,6 @@ public:
     const char* getName();
 
     void incldDept(Dept *pToDept);
-    void listeDept();
-    void listeDeptRev();
+    void listeDepts();
+    void listeDeptsRev();
 };

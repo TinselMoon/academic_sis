@@ -6,11 +6,12 @@ class ElDept{
 private:
     Dept *pDept;
 public:
-    Eldept();
+    ElDept();
     ~ElDept();
     
     ElDept *next, *prev;
     void setDept(Dept *pToDept);
-}
+    Dept* getDept();
+};
 
 

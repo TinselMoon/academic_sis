@@ -1,5 +1,6 @@
 #include "ListaDept.h"
 #include "eldept.h"
+#include "dept.h"
 #include "stdafx.h"
 
 ListaDept::ListaDept(){
@@ -34,7 +35,7 @@ void ListaDept::incldDept(Dept *pToDept){
 void ListaDept::listeDepts(){
     ElDept* t = First;
     while(t != NULL){
-        cout << t->pDept->getNome() << " / ";
+        cout << t->getDept()->getNome() << " / ";
         t = t->next;
     }
     cout << endl;
@@ -43,7 +44,7 @@ void ListaDept::listeDepts(){
 void ListaDept::listeDeptsRev(){
     ElDept* t = Last;
     while(t != NULL){
-        cout << t->pDept->getNome() << " / ";
+        cout << t->getDept()->getNome() << " / ";
         t = t->prev;
     }
     cout << endl;
