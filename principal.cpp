@@ -41,8 +41,5 @@ void Principal::executar(){
     cout << Joaquim.inform_nome() << " de RA: " << Joaquim.getRa() << endl;
     Dainf.listDis();
     Dainf.listDisRev();
-    TecProg.listAlunos();
-    TecProg.listAlunosRev();
-    Ed2.listAlunos();
-    TecProg.listAlunos();
+    TecProg.printAluno(0);
 }

@@ -1,5 +1,6 @@
 #pragma once
-#include "ListaAlunos.h"
+#include "aluno.h"
+#include "lista.h"
 
 class Dept;
 
@@ -9,7 +10,7 @@ private:
     char nome[30];
     Dept* pDept;
 
-    ListaAlunos ObjLAlunos;
+    Lista<Aluno> ObjLAlunos;
 
 public:
     Disciplina(const char* nomeD = "Unnamed", int max = 45);
@@ -18,6 +19,7 @@ public:
     void setDept(Dept* pToDept);
     const char* getName();
     void incldAluno(Aluno *pToAluno);
+    void printAluno(int i);
     void listAlunos();
     void listAlunosRev();
 };

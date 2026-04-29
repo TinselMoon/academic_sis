@@ -2,8 +2,7 @@
 #include "stdafx.h"
 #include <string.h>
 
-Disciplina::Disciplina(const char* nomeD, int max):
-ObjLAlunos(max)
+Disciplina::Disciplina(const char* nomeD, int max)
 {
     setName(nomeD);
     pDept = NULL;
@@ -25,14 +24,10 @@ const char* Disciplina::getName(){
 }
 
 void Disciplina::incldAluno(Aluno *pToAluno){
-    ObjLAlunos.incldAluno(pToAluno);
-}
-void Disciplina::listAlunos(){
-    cout << "Alunos da disciplina " << nome << ": ";
-    ObjLAlunos.listeAlunos();
+    ObjLAlunos.insert(pToAluno);
 }
 
-void Disciplina::listAlunosRev(){
-    cout << "Alunos da disciplina " << nome << ": ";
-    ObjLAlunos.listeAlunosRev();
+void Disciplina::printAluno(int i){
+    cout << ObjLAlunos[i]->inform_nome() << endl;
 }
+
